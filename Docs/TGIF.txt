@@ -1,0 +1,53 @@
+TGIF Prime Network DMR Gateway Support
+TG3149 Facebook Group Code Plug
+
+The included code plug supports mapping TGs 4000000 through 4999999 to the TGIF prime server. It does this by using the "rewrite" options in pi-star. To connect to a specific TGIF talkgroup, pad the ID with 4, followed by zeros, then the ID. Below are some examples:
+* TGIF 3149, use  40003149
+* TGIF 110, use   40000110
+* TGIF 31655, use 40031655
+
+Pi star will automatically translate the TG IDs behind the scenes.
+
+First some notes:
+* As of writing this (28 March, 2021) the TGIF Prime server is not yet the "primary" TGIF server. We are expecting the old server to go away any day. Please note that the references to Prime below should all still work after the Prime network is made primary.
+* BACK UP YOUR PI-STAR CONFIGURATION BEFORE MAKING ANY CHANGES! It only takes a few seconds and can save you hours of headaches if something goes wrong.
+* As far as I know, this will only work with pi-star based hotspots. If you have an OpenSpot, use profiles instead (not supported as I don't have one to test with).
+* The TGIF parrot talkgroup is not working correctly with this configuration. All other TGs appear to function normally.
+
+How To Enable:
+1) Log in to pi-star config panel.
+2) Under DMR configuration choose "DMRGateway."
+3) Apply changes and wait for service restart.
+3) Back under DMR configuration, enable the Brandmeister network. Choose approriate BM server, ESSID, and hotspot security password.
+4) Apply changes and wait for service restart, again.
+5) Navigate to "Expert" configuration panel.
+6) Perform a "Full Edit" of the "DMR GW."
+7) At the bottom of the file, place the following info. Change the ID and Password info!
+
+[DMR Network 4]
+Enabled=1
+Name=TGIF_Network_Prime
+Id=YOUR_DMR_ID_PLUS_ESSID
+PCRewrite1=1,4009990,1,9990,1
+PCRewrite2=2,4009990,2,9990,1
+TypeRewrite1=1,4009990,1,9990
+TypeRewrite2=2,4009990,2,9990
+TGRewrite1=1,4000001,1,1,999999
+TGRewrite2=2,4000001,2,1,999999
+SrcRewrite1=1,9990,1,4009990,1
+SrcRewrite2=2,9990,2,4009990,1
+SrcRewrite3=1,1,1,4000001,999999
+SrcRewrite4=2,1,2,4000001,999999
+Address=prime.tgif.network
+Password="YOUR_TGIF_PRIME_PASSWORD"
+Port=62031
+Location=0
+Debug=0
+
+8) Note: You can find your TGIF Prime hotspot password here after logging in: https://prime.tgif.network/profile.php?tab=Security
+9) Apply the changes.
+10) Reboot/restart the hotspot.
+11) Verify your hotspot shows up in both the Brandmeister panel AND the TGIF Prime panel.
+12) Transmit on TGIF using the ID pattern explained above. Ensuring you show up on the TGIF Lastheard page.
+13) Ensure that Parrot works on the BM network.
+14) Map the included TGIF TGs in the code plug to an open channel, and QSO away!

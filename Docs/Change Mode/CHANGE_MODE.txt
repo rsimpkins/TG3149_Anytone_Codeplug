@@ -1,0 +1,15 @@
+Update Code Plug Mode
+TG3149 Facebook Group Code Plug
+
+This documentation is contributed by W0AKO, Adam Cartwright.
+
+If your radio is in a mode that doesn’t match the codeplug, instead of changing the mode of your radio you can edit the codeplug file to match the mode of your radio. This can easily be done using a hex editor.
+
+First, in your browser go to https://hexed.it.
+
+Step 1: Open the codeplug .RDT file
+
+Step 2: Change the value at the address (hex) 0x0011. This will be the value in the 11th position, which will be on the second row, second value from the left.  Change this value to match the mode of your radio. For example, if your radio is mode 0, change this value to 00. (See the included screen shot.)
+
+Step 3: Save the codeplug as a new file so you retain the original as a backup. Use the new file when loading the codeplug into your radio.
+

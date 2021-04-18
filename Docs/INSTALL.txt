@@ -1,0 +1,27 @@
+Anytone Installation Instructions
+TG3149 Facebook Group Code Plug
+
+Important Note:
+The Anytone 878UV RDT file works with version 1.22 of CPS (the latest version). The radio should be running 1.22 as well. It requires the radio be in "Mode 7" or amateur mode. Many 878s have had their mode modified. Fixing this is possible, but complex. If you aren't comfortable with a hex editor, I suggest you switch the radio to Mode 7.
+
+You can download CPS v1.22 for the Anytone 878 here:
+
+https://bridgecomsystems.freshdesk.com/support/solutions/articles/63000105978-anytone-878-878-plus-cps-firmware-and-driver-downloads
+
+
+Installation Instructions:
+
+Before beginning...
+* Ensure your radio is running fimrware v1.22 and is in Mode 7.
+* Ensure the correct optional features are enabled for your specific model (APRS, GPS, BT, etc.) in the drop down menu Tool->Options. For most 878s you will want to enable APRS and GPS.
+
+1) Load the .rdt file using v1.22 of CPS.
+2) Navigate to Digital->Radio ID List
+3) Change the Radio ID and Name to match your ID and callsign.
+4) Select Public->APRS
+  Note: If this isn't visible, enable GPS features by selecting the drop down menu Tool->Options. Enable GPS & APRS.
+5) Edit URCALL to match your callsign.
+6) In the APRS Digital section, on "number 1" verify the APRS TG is 310999. Ensure the "Repeater Activation Delay" is 200ms.
+7) Update the Digital Contact List if needed (instructions are on YouTube from multiple sources).
+8) Write everything to the radio.
+9) Optionally set up the TGIF or PISTAR_REMOTE configurations (see PISTAR_REMOTE.txt and TGIF.txt for more info).

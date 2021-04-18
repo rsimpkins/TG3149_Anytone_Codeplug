@@ -1,0 +1,64 @@
+PI-STAR Remote Control Configuration
+TG3149 Facebook Group Code Plug
+
+Pi-star includes the ability to remotely control your hotspot using a radio. A common use for this is to reboot your hotspot remotly if something goes wrong, or attempt to totally shut it down if it malfunctions and you are not nearby. Configuration is simple.
+
+1) Log in to the pi-star dashboard.
+2) Navigate to Configuration->Expert
+3) Select "Full Edit", "PiStar-Remote"
+4) Use the following configuration. Note, use YOUR callsign for the "keepers information."
+
+[banner]
+# Pi-Star Remote config file
+# This config file is desiged for the Pi-Star Keeper remote control
+# The remote control system is designed to give repeater keepers an
+# RF KillSwitch for their repeaters.
+
+[enable]
+# Is the Pi-Star Remote Enabled? (true|false)
+enabled=true
+
+[keeper]
+# Keepers Information
+callsign=UR_CALLSIGN_HERE
+
+[d-star]
+# UR fields
+svckill=SVCKILL
+svcrestart=SVCRSTRT
+reboot=REBOOTPI
+#shutdown=SHUTDOWN
+getip=GETIP
+#hostfiles=HOSTFILE
+#8Ball=8BALL
+
+[dmr]
+# TG commands
+svckill=8999999
+svcrestart=8999998
+reboot=8999997
+shutdown=8999996
+hostfiles=8999995
+
+[ysf]
+# ROOM commands
+svckill=99999
+svcrestart=99998
+reboot=99997
+#shutdown=99996
+#hostfiles=99995
+
+[p25]
+# P25 Talkgroups are limited to 1->65535
+svckill=65531
+svcrestart=65532
+reboot=65533
+#shutdown=65534
+#hostfiles=65530
+
+5) Apply the changes.
+6) Restart the hotspot.
+7) Kerchunk 8999997 from a radio that has your ID in it (it needs to mach the keeper callsign).
+8) Verify the hotspot reboots. Note: The dashboard will just freeze and lockup when you reboot this way. Don't exect to see anything dramatic. Simply verify the hotspot actually restarts.
+
+Note: Why do the commands start with "89999..."?? Because Brandmeister has taken over the previous values PiStar was using here! If you get a voice message back that says something like "Security Token Invalid" that is actually coming from Brandmeister, not PiStar. It is part of BM's "Air Security" feature. Using the 899... values avoids this problem and it will work for you.

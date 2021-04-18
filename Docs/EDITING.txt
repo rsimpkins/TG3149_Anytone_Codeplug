@@ -1,0 +1,18 @@
+Editing Tips
+TG3149 Facebook Group Code Plug
+
+It has taken many hours to build the included code plug. The following tips, if followed, will help you avoid a number of major headaches if you choose to edit or customize the code plug for your own needs.
+
+=== Tip #1 ===
+CPS has a number of really annoying bugs when working with channels and talkgroups. The talkgroup order isn't always followed, can be reset without warning, and will seriously mess up linked TGs in the channels list. You can avoid most of these issues by using a spreadsheet program to edit the Data/Channels.csv and Data/Talkgroups.csv files instead of using the CPS software.
+
+Channels.csv:
+The easiest way to edit this file is to use the CPS program to set up an "example" channel you want to add. Ensure all the settings are correct. Next, export the channels from CPS. Use a spreadsheet program to edit the csv. Insert additional space as needed, ensuring you add the correct sequential channel numbers. Do not leave blank lines. You can easily copy/paste values from one channel to the next and edit the appropriate values. Save the file and import it.
+
+Talkgroups.csv
+The easiest way to edit Talkgroups is to ONLY use a spreadsheet to edit the Data/Talkgroups.csv file. The CPS software doesn't edit things correctly. After you are done editing the csv, import the Talkgroups in to CPS. Finally, re-import the Channels.csv file. This will "re-link" any talkgroups you've moved around. As long as you don't remove any TGs, you should be fine. Now you can see why it is helpful to edit both the Channels and Talkgroups via this method as they work together to set up a channel.
+
+Finally, don't forget to add any new channels you've added to a zone. I have included a _LABEL at the top of each channel section to make it easier to link the correct channel to the correct zone. I recommend you do the same as you add repeaters, etc.
+
+=== Tip #2 ===
+If you manually edit the talkgroups, channels, or zones using the radio's menus and buttons you are generally asking for trouble. Sometimes this simply can't be avoided. After you make any changes from the radio panel don't delay in downloading the configuration from the radio and mergeing it in to the correct channel, talkgroup and zone sections. As new versions of the code plug are released, it will be much easier to merge your custom edits in if you've followed the general structure of the code plug. If you've performed many manual edits from the radio's front panel, the configuration is likely going to be a mess. The more edits you make, the more difficult it will be to straighten it out. Fix it early, stay organized, and remain happy.

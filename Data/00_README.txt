@@ -1,0 +1,3 @@
+Anytone CPS is a hot buggy mess! These files will help you reset everything and fix any issues. It will also help power users customize the Code Plug using an external spreadsheet editor.
+
+Also included are two versions of channel listings. One with analog channels, one without. We will not be maintaining the "no analog" listing. It is for historical reference only for those who want to build their own custom code plugs using this data.
